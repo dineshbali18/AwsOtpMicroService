@@ -33,6 +33,7 @@ app.use("/api",otpRoutes);
 app.use("/api",reports)
 
 app.get("/first",(req,res)=>{
+  console.log("route middleware")
   var result = JSON.stringify({status:200, message:"First Node JS Application"})
     res.send(result)
 })
