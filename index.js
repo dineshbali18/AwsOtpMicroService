@@ -33,7 +33,8 @@ app.use("/api",otpRoutes);
 app.use("/api",reports)
 
 app.get("/",(req,res)=>{
-  return res.json({status:"running otp Micro Service"})
+  var result = JSON.stringify({status:200, message:"First Node JS Application"})
+    res.send(result)
 })
 
 app.listen(4000,()=>{
