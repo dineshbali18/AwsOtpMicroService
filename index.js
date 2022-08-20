@@ -32,6 +32,9 @@ app.use("/api",contestantRoutes);
 app.use("/api",otpRoutes);
 app.use("/api",reports)
 
+app.get("/",(req,res)=>{
+  return res.json({status:"running otp Micro Service"})
+})
 
 app.listen(4000,()=>{
     console.log(`otpService is running at my own configured port 4000`)
