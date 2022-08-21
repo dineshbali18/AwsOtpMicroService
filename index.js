@@ -38,7 +38,7 @@ app.get("/first",(req,res)=>{
     res.send(result)
 })
 
-app.get("/",()=>{
+app.get("/",(req,res)=>{
   return res.json({msg:"finally worked after a lot of work........."})
 })
 
