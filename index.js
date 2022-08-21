@@ -26,7 +26,7 @@ mongoose
 const otpRoutes=require("./routes/otp")
 const contestantRoutes=require("./routes/contestants")
 const reports = require('./routes/reports')
-
+var port=`3000`
 
 app.use("/api",contestantRoutes);
 app.use("/api",otpRoutes);
@@ -38,6 +38,11 @@ app.get("/first",(req,res)=>{
     res.send(result)
 })
 
-app.listen(4000,()=>{
-    console.log(`otpService is running at my own configured port 4000`)
+app.get("/",()=>{
+  return res.json({msg:"finally worked after a lot of work........."})
+})
+
+
+app.listen(port,()=>{
+    console.log(`otpService is running at my own configured port ${port}`)
 })
