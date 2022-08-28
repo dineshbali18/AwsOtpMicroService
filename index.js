@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(cors());
 
 mongoose
-  .connect("mongodb+srv://Bali:DiNeSh5@cluster0.n1uvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://Bali:DiNeSh5@cluster0.p0oxci7.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex: true
