@@ -12,3 +12,17 @@ exports.getAllContestants=(req,res)=>{
       res.json({contestants1})
     })
   }
+
+exports.createContestant=(req,res)=>{
+  // console.log(req.body);
+    const new_contestant=new contestant(req.body)
+    new_contestant.save((err,contestant)=>{
+        if (err) {
+          console.log(err);
+            return res.status(400).json({
+              error: "NOT able to save contestantin DB"
+            });
+          }
+          res.json({ contestant});
+    })
+}
