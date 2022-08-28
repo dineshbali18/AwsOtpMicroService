@@ -4,19 +4,23 @@ const contestantSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    votes:{
-        type:Number,
-        default:0
-    },
     photo: {
         data: Buffer,
-        contentType: String,
+        contentType: String
         // required:true
     },
     //role ===> nominated
-    role:{
+    description:{
+        type:String,
+        required:true
+    },
+    safe:{
         type:Number,
         default:0
+    },
+    eliminatedWeek:{
+        type:Number,
+        default:1
     }
 })
 
