@@ -4,10 +4,8 @@ const contestantSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    photo: {
-        data: Buffer,
-        contentType: String
-        // required:true
+    image:{
+        type:String
     },
     //role ===> nominated
     description:{
