@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(cors());
 
 mongoose
-  .connect("mongodb+srv://Bali:DiNeSh5@cluster0.p0oxci7.mongodb.net/?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://balidinesh2000:Dinesh5@otpcluster.gvfxo.mongodb.net/?retryWrites=true&w=majority&appName=otpcluster", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex: true
@@ -24,13 +24,11 @@ mongoose
   });
 
 const otpRoutes=require("./routes/otp")
-const contestantRoutes=require("./routes/contestants")
-const reports = require('./routes/reports')
 var port=`3000`
 
-app.use("/api",contestantRoutes);
+
 app.use("/api",otpRoutes);
-app.use("/api",reports)
+
 
 app.get("/first",(req,res)=>{
   console.log("route middleware")

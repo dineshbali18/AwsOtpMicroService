@@ -52,8 +52,8 @@ exports.sendOtp=(req,res)=>{
         const result = await transporter.sendMail({
             from: 'BigBosstelugu<bigbossvoting@gmail.com>',
             to: req.body.email,
-            subject: 'Otp for Bigboss telugu',
-            text: `Your Otp is ${send_otp}`
+            subject: 'Otp - Quick Byte',
+            text: `Your Otp for QuickByte is ${send_otp}`
         });
     
         console.log(JSON.stringify(result, null, 4));
