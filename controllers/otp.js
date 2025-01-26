@@ -53,8 +53,8 @@ exports.sendOtp = async (req, res) => {
       const result = await transporter.sendMail({
         from: 'BigBosstelugu <bigbossvoting@gmail.com>',
         to: email,
-        subject: 'Otp - Quick Byte',
-        text: `Your OTP for QuickByte is ${send_otp}`,
+        subject: 'OTP - Bearcat Code',
+        text: `Your OTP for Bearcat Finance App is ${send_otp}`,
       });
 
       console.log('Email sent:', result);
