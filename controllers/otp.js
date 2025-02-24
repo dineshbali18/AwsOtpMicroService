@@ -15,11 +15,12 @@ exports.generateOtp = async (req, res) => {
         otp: otp2,
         email: req.body.email,
       });
-
+      console.log("Generate",otpData)
       await otpData.save();
       return res.json({ message: "OTP generated and saved successfully." });
     } else {
       // Update OTP if email exists
+      console.log("Generate :::: NEWWW",otp2)
       await otp.findOneAndUpdate({ email: req.body.email }, { $set: { otp: otp2 } });
       return res.status(200).json({ message: "OTP updated successfully." });
     }
@@ -35,7 +36,7 @@ exports.sendOtp = async (req, res) => {
 
     // Find OTP for the provided email
     const userOtp = await otp.find({ email }).exec();
-
+console.log("SEND",userOtp)
     if (userOtp.length > 0) {
       const send_otp = userOtp[0].otp;
 
@@ -70,7 +71,7 @@ exports.sendOtp = async (req, res) => {
 
 exports.verifyOtp = async (req, res) => {
   try {
-    const { email, otp: enteredOtp } = req.body;
+    const { email, Otp: enteredOtp } = req.body;
 
     // Find OTP for the provided email
     const userOtp = await otp.find({ email }).exec();
@@ -78,6 +79,9 @@ exports.verifyOtp = async (req, res) => {
     if (userOtp.length === 0) {
       return res.status(400).json({ error: 'OTP expired or not found.' });
     }
+
+    console.log("VERRRIFY:::",userOtp)
+    console.log("EEEEEEEEEEEEEEEE",enteredOtp)
 
     // Compare entered OTP with the stored OTP
     if (enteredOtp === userOtp[0].otp.toString()) {
